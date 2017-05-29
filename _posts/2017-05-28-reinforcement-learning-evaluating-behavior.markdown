@@ -177,7 +177,7 @@ This was a _long_ post (I apologize) with some math (I apologize some more, but 
 
 ### Reducing alpha
 
-In order for this algorithm to converge, we need to _reduce_ the value of alpha. We can't reduce it too fast, because we would fall short of the correct value function. We can't reduce it too slow, because it may make us diverge. How to we pick alpha, you ask? Well, _in theory_, any sequence of alphas that follow these rules will work:
+In order for this algorithm to converge, we need to _reduce_ the value of alpha. We can't reduce it too fast, because we would fall short of the correct value function. We can't reduce it too slowly, because it may make us diverge. How do we pick alpha, you ask? Well, _in theory_, any sequence of alphas that follow these rules will work:
 
 \\[
 \sum_{t=0}^\infty \alpha_t = \infty \, ; \, \sum_{t=0}^\infty \alpha_t^2 < \infty
