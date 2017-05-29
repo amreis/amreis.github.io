@@ -169,10 +169,21 @@ This was a _long_ post (I apologize) with some math (I apologize some more, but 
 
 ### Reducing alpha
 
+In order for this algorithm to converge, we need to _reduce_ the value of alpha. We can't reduce it too fast, because we would fall short of the correct value function. We can't reduce it too slow, because it may make us diverge. How to we pick alpha, you ask? Well, _in theory_, any sequence of alphas that follow these rules will work:
 
+\\[
+\sum_{t=0}^\infty \alpha_t = \infty \, ; \, \sum_{t=0}^\infty \alpha_t < \infty
+\\]
+
+One sequence of alphas that respects these conditions is, for example, \\(\alpha_t = 1/t\\). 
 
 ## References
 
 * Lectures 2-3 of David Silver's course ([here](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/MDP.pdf) and [here](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/DP.pdf))
+
+<!--
+
 * Sutton & Barto's book (link, chapter)
 * THE survey paper
+
+-->
