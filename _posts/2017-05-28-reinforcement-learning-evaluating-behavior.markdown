@@ -4,6 +4,7 @@ layout: post
 date: 2017-05-28 17:33:20 -0700
 categories: ml reinf-learn
 tags: policy-evaluation monte-carlo
+description: "A post on policy evaluation, one of the most basic tasks in Reinforcement Learning"
 ---
 
 This is the second post of a series I'm writing on Reinforcement Learning, giving an overview on the subject and trying to stay away from overwhelming formalities. This way, hopefully, you can better understand concepts as explained in Sutton & Barto's book, for example.
