@@ -41,7 +41,7 @@ img[src*='#center'] {
 </style>
 
 
-![An img](/assets/state-env-interaction.png#center)
+![An img](/assets/state-env-interaction.svg#center)
 
 
 The fact that we index the rewards on the _next_ time step represents that we have already interacted with the environment, so we consider that the reward we see is already a part of the "next step".
