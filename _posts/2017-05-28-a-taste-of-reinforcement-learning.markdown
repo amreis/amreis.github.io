@@ -9,8 +9,6 @@ layout: post
 
 This post also appeared in *dev.to* as [A Taste of Reinforcement Learning](https://dev.to/amreis/a-taste-of-reinforcement-learning)
 
-# A Taste of Reinforcement Learning
-
 For the last few months, I've been hearing more and more about Reinforcement Learning. You might have too. You might have seen DeepMind's [fantastic results](https://youtu.be/V1eYniJ0Rnk) in playing Atari games, or maybe you just stumbled upon the video of [a helicopter](https://www.youtube.com/watch?v=VCdxqn0fcnE) that learned how to best drive itself and do acrobatics.
 
 All of those demonstrations have sparked my interest in the field, so I went on to get to know a little bit better what the fuss is all about. Here are some of my impressions, and why I'm currently in love with the field.

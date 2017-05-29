@@ -5,7 +5,6 @@ date: 2017-05-28 17:33:20 -0700
 categories: ml reinf-learn
 tags: policy-evaluation monte-carlo
 ---
-# Reinforcement Learning: Evaluating Behavior
 
 This is the second post of a series I'm writing on Reinforcement Learning, giving an overview on the subject and trying to stay away from strong theory. This way, hopefully, you can better understand concepts as explained in Sutton & Barto's book, for example.
 
