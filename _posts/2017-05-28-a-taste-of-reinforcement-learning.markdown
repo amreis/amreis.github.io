@@ -6,6 +6,9 @@ tags: reinforcement-learning mdp optimal-control machine-learning
 categories: ml reinf-learn
 layout: post
 ---
+
+This post also appeared in *dev.to* as [A Taste of Reinforcement Learning](https://dev.to/amreis/a-taste-of-reinforcement-learning)
+
 # A Taste of Reinforcement Learning
 
 For the last few months, I've been hearing more and more about Reinforcement Learning. You might have too. You might have seen DeepMind's [fantastic results](https://youtu.be/V1eYniJ0Rnk) in playing Atari games, or maybe you just stumbled upon the video of [a helicopter](https://www.youtube.com/watch?v=VCdxqn0fcnE) that learned how to best drive itself and do acrobatics.
