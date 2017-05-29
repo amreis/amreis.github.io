@@ -159,7 +159,7 @@ We have a sample from the value function in the `value` variable. This can be co
 
 ## Wrap-up
 
-This was a _long_ post (I apologize) with some math (I apologize some more, but I swear it was needed) and some code. No apologies for the code. We covered just a part of policy evaluation techniques, and the next post will be dedicated to what we call **temporal difference** methods (namely, TD(0) and TD(\\(\lambda\\))).
+This was a _long_ post (I apologize) with some math (I apologize some more, but I swear it was needed) and some code. No apologies for the code. We covered just a part of policy evaluation techniques, and the next post will be dedicated to what we call **temporal difference** methods (namely, TD(0) and TD\\((\lambda)\\)).
 
 ### Important concepts
 
