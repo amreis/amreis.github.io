@@ -6,7 +6,7 @@ categories: ml reinf-learn
 tags: policy-evaluation monte-carlo
 ---
 
-This is the second post of a series I'm writing on Reinforcement Learning, giving an overview on the subject and trying to stay away from strong theory. This way, hopefully, you can better understand concepts as explained in Sutton & Barto's book, for example.
+This is the second post of a series I'm writing on Reinforcement Learning, giving an overview on the subject and trying to stay away from overwhelming formalities. This way, hopefully, you can better understand concepts as explained in Sutton & Barto's book, for example.
 
 In this post, I'll be talking about something called **policy evaluation**. In the context of Reinforcement Learning, evaluating a policy means that we want to know how good a certain behavior is in a given environment. But first, let's remember what we got ourselves into:
 
@@ -21,6 +21,8 @@ Before we dive into policy evaluation, we need to build some concepts concerning
 ## Defining a concrete goal
 
 Throughout our agent's interaction with the environment, it will see a sequence of **states**, take **actions** and receive **rewards**. If we have an environment with the notion of _termination_, every time we reach a terminal state, we say that an _episode_ has ended. Our **trajectory** in this episode is usually represented as \\(\tau = \left\langle s_0, a_0, r_1, s_1, a_1, r_2, \dots, a_{T-1}, r_T \right\rangle\\).
+
+In the context of trajectories, I will use capitalized letters to denote random variables, and non-capitalized letters to represent concrete values they take. Also, it is common to index the trajectory using the variable \\(t\\), that represents _time_.
 
 <style type="text/css">
 
@@ -47,10 +49,14 @@ The fact that we index the rewards on the _next_ time step represents that we ha
 
 Looking at our trajectory, we can choose to maximize different goals. Two central examples of those are:
 
-* Average return: \\(\frac{1}{T} \sum_{i=1}^{T} R_i\\)
-* Discounted return: \\(G_t = \sum_{i=0}^T \gamma^{i} R_{t+i+1}\\), where \\(\gamma \in [0, 1]\\)
+* Average return: \\(\frac{1}{T} \sum_{i=1}^{T} R_i\\) -- the average of the rewards obtained from the start to the end of the episode.
+* Discounted return: \\(G_t = \sum_{i=0}^T \gamma^{i} R_{t+i+1}\\), where \\(\gamma \in [0, 1]\\) -- the sum of the rewards obtained from the start to the end of the episode, using a geometric decay factor.
 
-We are going to focus on the _second_ one, which values immediate reward more strongly than late rewards. This can be related to the concepts in finance, for example, where immediate gain is often more valuable than average gain. Also, the fact that we have this factor of \\(\gamma\\) multiplying the instantaneous reward lets us treat infinite-horizon problems as if they were finite. That happens because
+**Important note**: _return_ and _reward_ are different terms. Reward is used referring to the instantaneous signal we receive from the environment, while the return is typically a more global measure over a trajectory. Also, the discounted return is indexed by \\(t\\), the time variable, because it makes sense for us to speak about the _discounted return_ starting at time \\(t\\).
+
+The \\(\gamma\\) decay factor controls how much we value immediate rewards over future rewards. For example, if we set \\(\gamma=0\\), our agent will only value immediate rewards, without planning for the future. Also, it's worth nothing that we _can_ set \\(\gamma = 1\\), but then the MDP needs to respect some properties to ensure that the return will always be finite.
+
+We are going to focus on the **discounted return**, which values immediate reward more strongly than late rewards. This can be related to the concepts in finance, for example, where immediate gain is often more valuable than average gain. Also, the fact that we have this factor of \\(\gamma\\) multiplying the instantaneous reward lets us treat infinite-horizon problems as if they were finite. That happens because
 \\[
 \sum_{i=0}^{\infty} \gamma^i = \frac{1}{1-\gamma} \quad ,\gamma \in [0,1]
 \\]
