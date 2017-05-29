@@ -77,7 +77,7 @@ a \sim \pi(\cdot | s) \quad ; \quad \pi(a|s) = \mathbb{P}(A_t = a\, | \,S_t = s)
 \\]
 Which means that the action we pick at state \\(s\\) is drawn from a probability distribution determined by that state. If the policy is deterministic, we may write \\(a = \pi(s)\\). Also, it is supposed to be stationary (i.e. it doesn't change over time).
 
-It makes sense, then, to relate rewards to states and actions. This is done through two functions: the _state-value_ function and the _action-value_ function. The only one that matters to us now in the _state-value_ function, the _action-value_ will show its worth when we attack the planning problem.
+It makes sense, then, to relate rewards to states and actions. This is done through two functions: the _state-value_ function and the _action-value_ function. The only one that matters to us now is the _state-value_ function, the _action-value_ will show its worth when we attack the planning problem.
 
 ### The State-Value function \\(v_\pi\\)
 
@@ -138,7 +138,9 @@ state_values = [0.0 for _ in range(n_states)] # initial guess = 0 value
 # We run this algorithm for a given number of episodes
 for episode in range(number_episodes):
   # we get the trajectory from the episode. we only care
-  # about the states we've seen and the rewards we've got
+  # about the states we've seen and the rewards we've got.
+  # `policy` is a function or a table that tells us how to
+  # behave in each state, not shown here.
   states, rewards = run_episode(policy)
   for i, state in enumerate(states):
     # calculate G_t using the gamma discounts
@@ -153,7 +155,7 @@ This should be in line with what you were expecting from code that does what I d
 
 Using this `alpha` value, which is between zero and one, we can think of that last line in the following way:
 
-We have a sample from the value function in the `value` variable. This can be considered as a "noisy truth". What we do is _shift_ our current prediction by a small amount `alpha` in the direction of the "true" value (the one we sampled). That way, if we gradually reduce `alpha`, our estimate will converge to the true state-value function.
+We have a sample from the value function in the `value` variable. This can be considered as a "noisy truth". What we do is _shift_ our current prediction by a small amount `alpha` in the direction of the "true" value (the one we sampled). That way, if we gradually reduce `alpha`, our estimate will converge to the true state-value function. Also, later when we will be doing _planning_, having this type of "shifting by alpha" behavior will allow us to forget the distant past, which means we can adapt to new behavior we find while exploring the environment.
 
 ## Wrap-up
 
