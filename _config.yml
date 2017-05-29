@@ -16,9 +16,10 @@
 title: Alister Reis's blog
 email: alister.reis@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  The blog of a Computer Science/Data Science student from Porto Alegre,
+  Brazil. I'm a student of both the Federal University of Rio Grande do Sul
+  (UFRGS) and the INP Grenoble - Ensimag in Grenoble, France. Mostly writing
+  about Reinforcement Learning, my main interest.
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://amreis.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: porralister 
