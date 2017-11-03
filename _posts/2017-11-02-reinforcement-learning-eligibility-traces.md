@@ -107,6 +107,11 @@ img[src*='#center'] {
 
 
 ![Lambda weighting decay over time](/assets/lambda_return_weight.png#center)
+This graph shows the value of \\((1-\lambda) \lambda^{n}\\) for different values
+of \\(n\\). We can see how different values of lambda affect the initial value of a return
+and the way this value decays over time. Bigger values of lambda lead to slower decay
+(information from the past is given a non-negligible importance).
+
 
 ## ... by introducing a new problem
 
