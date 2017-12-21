@@ -292,7 +292,7 @@ the corresponding optimal policy is immediate, but I'll mention it here for comp
 It is formed in the following way:
 
 $$
-\pi(s) = \text{argmax}_a \sum{s'} p(s' | s, a) [r + \gamma V^*(s')]
+\pi(s) = \text{argmax}_a \sum_{s'} p(s' | s, a) [r + \gamma V^*(s')]
 $$
 
 ## Wrap-up
