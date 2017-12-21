@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Hi, I'm Alister Machado dos Reis, a 21-years old student from Porto Alegre, Brazil. I'm currently enrolled as a B.Sc. Student in Computer Science at the Federal University
+Hi, I'm Alister Machado dos Reis, a 22-years old student from Porto Alegre, Brazil. I'm currently enrolled as a B.Sc. Student in Computer Science at the Federal University
 of Rio Grande do Sul (my State in Brazil). I was also part of the BRAFITEC exchange program between the years of 2015 and 2017. It is one of the most
 competitive exchange programs of my country.
 
