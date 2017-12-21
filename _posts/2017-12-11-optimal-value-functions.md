@@ -108,13 +108,13 @@ Knowing how to evaluate a policy allows us to make it _better_. We can do that
 because of a result called the _policy improvement theorem_.
 
 Suppose we have a new policy \\(\pi'\\) such that \\(\pi'(s) \neq \pi(s)\\). Now
-assume that, if we choose _a single action_ according to \\(\pi'\\) and follow \\(\pi\\)
+assume that we choose _a single action_ according to \\(\pi'\\) and follow \\(\pi\\)
 for the rest of the episode. If doing this leads to a better outcome, then we might expect
 that the new behavior upon seeing state \\(s\\) is one that we should take for _every_
 occurrence of \\(s\\).
 
 Formally, if the new policy \\(\pi'\\) satisfies \\(q_\pi(s, \pi') \geq v_\pi(s) \forall s\\),
-then we have that \\(v_{\pi'}(s) \geq v_\pi(s) \forall s\\), and policy \\(\pi'\\) is an _improvement_
+then we have that \\(v_{\pi'}(s) \geq v_\pi(s) \forall s\\), then policy \\(\pi'\\) is an _improvement_
 over \\(\pi\\).
 
 Now suppose we build a new policy in the following way:
@@ -130,7 +130,7 @@ action that gives it the biggest _expected_ (weighted average) return.
 
 Notice that a greedy policy \\(\pi\\) can be looked at from two perspectives:
  it is a function that maps a state to an action \\(\pi(s) = a\\) but also a
- probability distribution over actions that focuses on a single action
+ probability distribution over actions that focuses all of its mass on a single action
  \\(\pi(a|s) = 1\\), if \\(a\\) is the greedy action, and \\(0\\) otherwise.
 
 The new policy satisfies the policy improvement theorem by definition, and so is
@@ -143,7 +143,7 @@ This might give you a hint on what we're about to do to reach the optimal policy
 Let's not focus on the _name_ of the technique now, but instead look at the bigger picture.
 We have a way of _precisely evaluating_ the value of a policy. And given the value
 of a policy, we have a way of _improving_ the policy. Okay then, let's just do that
-alternately: evaluate, improve, evaluate, improve, evaluate, improve...:
+over and over again: evaluate, improve, evaluate, improve, evaluate, improve...
 
 Listing 1: Policy Iteration Algorithm
 ```python
@@ -157,10 +157,12 @@ while not policy_stable:
   policy = new_policy
 ```
 
-I wanted to keep the code at a very, very high level there, because we won't do
-that in practice, but the idea is still important. The evaluation step follows
+The evaluation step (line 4) follows
 what is described in "First step", iteratively applying the \\(T^\pi\\) operator
 to the value function until it converges.
+
+I wanted to keep the code at a very, very high level there, because we won't do
+that in practice, but the idea is still important.
 
 You might notice that I (well, the people who created this, in fact) called this
 **Policy Iteration**, not Value Iteration as is the name of the section.
