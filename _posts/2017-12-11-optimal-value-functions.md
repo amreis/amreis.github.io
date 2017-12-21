@@ -285,6 +285,16 @@ $$
 So the error between our initial estimate and the optimal value function decreases
 exponentially fast with successive applications of the Bellman operator.
 
+### Deriving the optimal policy
+
+From the optimal state-values, under known dynamics, the process of coming up with
+the corresponding optimal policy is immediate, but I'll mention it here for completeness.
+It is formed in the following way:
+
+$$
+\pi(s) = \text{argmax}_a \sum{s'} p(s' | s, a) [r + \gamma V^*(s')]
+$$
+
 ## Wrap-up
 
 We covered a lot of ground on a very important subject in this post. Here are the
