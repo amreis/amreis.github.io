@@ -258,9 +258,9 @@ V_\pi = (I - \gamma \mathcal{P})^{-1} \mathcal{R}
 $$
 
 Which is a linear system of \\(n\\) equations in \\(n\\) variables. Plug in a solver,
-and be happy. In fact we usually prefer to use iterative methods like value iteration,
-since they often give us the optimal policy faster (even though the state values themselves
-might not have converged completely).
+and be happy. In fact we usually prefer to use iterative methods like repeated
+application of the \\(T^\pi\\) operator insted of going through the hassle of
+inverting a matrix.
 
 ### Convergence speed of the Bellman operator
 
