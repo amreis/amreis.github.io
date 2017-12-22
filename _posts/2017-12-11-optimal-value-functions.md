@@ -113,8 +113,8 @@ for the rest of the episode. If doing this leads to a better outcome, then we mi
 that the new behavior upon seeing state \\(s\\) is one that we should take for _every_
 occurrence of \\(s\\).
 
-Formally, if the new policy \\(\pi'\\) satisfies \\(q_\pi(s, \pi') \geq v_\pi(s) \forall s\\),
-then we have that \\(v_{\pi'}(s) \geq v_\pi(s) \forall s\\), then policy \\(\pi'\\) is an _improvement_
+Formally, if the new policy \\(\pi'\\) satisfies \\(q_\pi(s, \pi'(s)) \geq v_\pi(s) \forall s\\),
+then we have that \\(v_{\pi'}(s) \geq v_\pi(s) \forall s\\), and policy \\(\pi'\\) is an _improvement_
 over \\(\pi\\).
 
 Now suppose we build a new policy in the following way:
