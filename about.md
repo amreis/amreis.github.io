@@ -14,7 +14,7 @@ My exchange program entails a double degree, which means I'll be receiving degre
 
 I'm mostly interested in Reinforcement Learning these days, but it wasn't a part of my studies so I'm teaching myself and using these blog posts to build and share knowledge.
 
-You can find me on [Facebook](https://facebook.com/AlisterMachado), [LinkedIn](https://www.linkedin.com/in/alistermachado/), [Github](https://github.com/amreis/) and [Twitter](https://twitter.com/porralister).
+You can find me on [Facebook](https://facebook.com/AlisterMachado), [LinkedIn](https://www.linkedin.com/in/alistermachado/), [Github](https://github.com/amreis/) and [Twitter](https://twitter.com/porralister), and here is my [Resume](/assets/cv/CV_AlisterReis.pdf).
 
 Hope you enjoy the content!
 
