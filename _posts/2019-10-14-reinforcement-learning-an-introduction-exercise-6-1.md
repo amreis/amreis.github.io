@@ -153,4 +153,4 @@ where the rest of the proof stays exactly the same.
 
 ## References
 
-* Sutton and Barto's book, 2nd edition, page 121
+* Sutton and Barto's book, 2nd edition, page [121](http://incompleteideas.net/book/RLbook2018.pdf#page=143)
