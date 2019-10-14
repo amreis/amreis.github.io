@@ -1,6 +1,6 @@
 ---
 title: "Reinforcement Learning: An Introduction – Exercise 6.1"
-date: 2019-10-14 12:00:00 -0300
+date: 2019-10-14 9:00:00 -0300
 description: Resolution of the exercise 6.1 in Sutton and Barto's book, 2nd edition
 tags: reinforcement-learning mdp machine-learning exercises rlbook
 categories: ml reinf-learn
@@ -82,7 +82,8 @@ When we perform a TD update within the episode, it looks like this:
 
 $$
 V_{t+1}(S_t) \dot{=} V_t(S_t) + \alpha [R_{t+1} + \gamma V_t(S_{t+1}) - V_t(S_t)]\\
-= V_t(S_t) + \alpha \delta_t
+= V_t(S_t) + \alpha \delta_t \text{ , and}\\
+V_{t+1}(s') \dot{=} V_t(s') \forall s' \neq S_t
 $$
 
 Let's look at how to express the difference between the return at time \\(t\\) and the value estimate of state \\(S_t\\), which is exactly what Exercise 6.1 asks us to do:
@@ -102,18 +103,36 @@ $$
 
 We will now look closely at \\(V_{t+1}(S_{t+1}) - V_t(S_{t+1})\\), since it's the only difference between this last step in the proof and the same thing for the case where estimates don't change within the episode.
 
-The only change between \\(t\\) and \\(t+1\\) is made in the estimate for \\(S_t\\), because that's the only state we have information for. What I'm saying is, from the definition of the update in \\(V\\), after observing \\(R_{t+1}\\) and \\(S_{t+1}\\), we _only_ update the estimate for state \\(S_t\\), leaving _all the other estimates untouched_. This effectively implies that \\(V_t(S_{t+1})\\) and \\(V_{t+1}(S_{t+1})\\) are _the same thing_! Which in turns gives us:
+The only change between \\(t\\) and \\(t+1\\) is made in the estimate for \\(S_t\\), because that's the only state we have information for. What I'm saying is, from the definition of the update in \\(V\\), after observing \\(R_{t+1}\\) and \\(S_{t+1}\\), we _only_ update the estimate for state \\(S_t\\), leaving _all the other estimates untouched_. This effectively implies that \\(V_t(S_{t+1})\\) and \\(V_{t+1}(S_{t+1})\\) are _the same thing_, except for \\(S_{t+1} = S_t\\)! When \\(S_{t+1} = S_t\\), we have:
 
 $$
-= \delta_t + \gamma (0) + \gamma(G_{t+1} - V_{t+1}(S_{t+1}))\\
-= \delta_t + \gamma \delta_{t+1} + \gamma^2(G_{t+2} - V_{t+2}(S_{t+2}))\\
-= \delta_t + \gamma \delta_{t+1} + \cdots + \gamma^{T-t-1}\delta_{T-1}\\
-= \sum_{k=t}^{T-1} \gamma^{k-t}\delta_k
+V_{t+1}(S_{t+1}) - V_t(S_{t+1}) = V_{t+1}(S_t) - V_t(S_t) = (V_t(S_t) + \alpha \delta_t) - V_t(S_t) =\\
+\alpha \delta_t
+$$
+
+We can express both cases -- where \\(S_{t+1}\\) and \\(S_t\\) are/are not equal -- compactly as:
+
+$$
+V_{t+1}(S_{t+1}) - V_t(S_{t+1}) = \mathbf{I}( S_{t+1} = S_t ) (\alpha \delta_t)
+$$
+
+where \\(\mathbf{I}\\) is the _indicator function_, which returns \\(1\\) when the predicate inside it is true, and \\(0\\) otherwise. We can then introduce this in our proof:
+
+
+$$
+= \delta_t + \gamma (\mathbf{I}( S_{t+1} = S_t ) (\alpha \delta_t)) + \gamma(G_{t+1} - V_{t+1}(S_{t+1}))\\
+= (1 + \alpha\gamma \mathbf{I}( S_{t+1} = S_t )) \delta_t + \gamma (G_{t+1} - V_{t+1}(S_{t+1}))\\
+= (1 + \alpha\gamma \mathbf{I}( S_{t+1} = S_t )) \delta_t
++ \gamma (1 + \alpha\gamma \mathbf{I}(S_{t+2} = S_{t+1}))\delta_{t+1} + \gamma^2 (G_{t+2} - V_{t+2}(S_{t+2}))\\
+= (1 + \alpha \gamma\mathbf{I}( S_{t+2} = S_t )) \delta_t +
+\gamma (1+ \alpha \gamma\mathbf{I}( S_{t+2} = S_{t+1}))\delta_{t+1} + \cdots +
+\gamma^{T-t-1}(1 + \alpha \gamma \mathbf{I}( S_T = S_{T-1} ))\delta_{T-1}\\
+= \sum_{k=t}^{T-1} \gamma^{k-t} (1 + \alpha \gamma \mathbf{I}( S_{k+1} = S_k))\delta_k
 $$
 
 (again, \\(G_T\\) and \\(V_t(S_T), 0 \leq t \leq T\\) are equal to zero for the same reasons as before).
 
-Which means that, even though our state estimates change within an episode, the error between them and the corresponding returns can be neatly written as a sum of the TD errors.
+Which means that, even though our state estimates change within an episode, the error between them and the corresponding returns can be neatly written as a sum of the TD errors, plus an additional factor that is equal to \\(\alpha\\) everytime \\(S_{t+1}\\) is equal to \\(S_t\\).
 
 Thanks for bearing with me through what I think is a very nice and rewarding proof!
 
