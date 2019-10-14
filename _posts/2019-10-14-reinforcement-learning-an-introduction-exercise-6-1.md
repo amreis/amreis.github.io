@@ -132,9 +132,24 @@ $$
 
 (again, \\(G_T\\) and \\(V_t(S_T), 0 \leq t \leq T\\) are equal to zero for the same reasons as before).
 
-Which means that, even though our state estimates change within an episode, the error between them and the corresponding returns can be neatly written as a sum of the TD errors, plus an additional factor that is equal to \\(\alpha\\) everytime \\(S_{t+1}\\) is equal to \\(S_t\\).
+Which means that, even though our state estimates change within an episode, the error between them and the corresponding returns can be neatly written as a sum of the TD errors, plus an additional factor that is equal to \\(\alpha\gamma\\) everytime \\(S_{t+1}\\) is equal to \\(S_t\\).
 
 Thanks for bearing with me through what I think is a very nice and rewarding proof!
+
+## A sidenote
+
+When I first attempted this problem, I made an erroneous demonstration, that led to a different result and did not account for cases where \\(S_{t+1} = S_t\\). Plugging this fact into my old proof might have made it too convoluted, so here's another way to get to the same result:
+
+$$
+G_t - V_t(S_t) = R_{t+1} + \gamma G_{t+1} - V_t(S_t) + (\gamma V_t(S_{t+1}) - \gamma V_t(S_{t+1}))\\
+= R_{t+1} + \gamma V_t(S_{t+1}) - V_t(S_t) + \gamma (G_{t+1} - V_t(S_{t+1}))\\
+= \delta_t + \gamma [G_{t+1} - (V_{t+1}(S_{t+1}) - \alpha \delta_t \mathbf{I}(S_{t+1} = S_t))]\\
+= \delta_t + \gamma [G_{t+1} - V_{t+1}(S_{t+1}) + \alpha \delta_t \mathbf{I}(S_{t+1} = S_t)]\\
+= \delta_t + \gamma \alpha \delta_t \mathbf{I}(S_{t+1} = S_t) + \gamma (G_{t+1} - V_{t+1}(S_{t+1}))\\
+= (1 + \alpha\gamma\mathbf{I}(S_{t+1} = S_t))\delta_t + \gamma (G_{t+1} - V_{t+1}(S_{t+1})) = \cdots
+$$
+
+where the rest of the proof stays exactly the same.
 
 ## References
 
