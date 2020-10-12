@@ -5,8 +5,7 @@ permalink: /about/
 ---
 
 Hi, I'm Alister Machado dos Reis, a 24-years old Google Software Engineer from Porto Alegre, Brazil, currently living in Belo Horizonte, Brazil. I obtained my B.Sc. in Computer Science ([Institute of Informatics](https://www.inf.ufrgs.br/site/)) at the Federal University of Rio Grande do Sul ([UFRGS](http://www.ufrgs.br/ufrgs/inicial)) in March 2018.
-I was also part of the BRAFITEC exchange program between the years of 2015 and 2017. It is one of the most
-competitive exchange programs of my country.
+I was also part of the BRAFITEC exchange program between the years of 2015 and 2017. It is one of the most competitive exchange programs of my country.
 
 As a part of this program, I was also enrolled at the INP Grenoble (Institut National Polytechnique de Grenoble) in Grenoble, France. There, I was a student at the École Nationale Supérieure d'Informatique et Mathématiques Apliquées de Grenoble (ENSIMAG). I was enrolled as an Information Systems Engineering student between 2015 and 2016, and later I was a student in the Master's Program in Data Science (2016-2017).
 
