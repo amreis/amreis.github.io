@@ -111,8 +111,8 @@ And then I got a little stuck. It's weird that there's a \\((1-\lambda)\widehat{
 At the same time, the equality I'm trying to prove involves a standalone \\(\widehat{v}(S_t)\\) term...
 My only hope is to expand it all and hope that things cancel out once I work the
 deeper levels. The only thing that is in place so far is the \\(\delta_t\\) term,
-which fits perfectly with what we're trying to prove. Also, you might have already
-spotted where I made a big mistake that will bite my ass in the short future.
+which kind of fits with what we're trying to prove, except for the leading \\((1-\lambda)\\) coefficient.
+Also, you might have already spotted where I made a big mistake that will bite my ass in the short future.
 
 Let's keep going:
 
