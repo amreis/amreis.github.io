@@ -66,7 +66,7 @@ functions. Read the book for more details, there's a link to it at the bottom.
 Where (12.10) is the following equation:
 
 $$\begin{aligned}
-&G_{t:t+k}^\lambda = \widehat{v}(S_{t+1}, \mathbf{w}_{t-1}) + \sum_{i=t}^{t+k-1} (\gamma\lambda)^{i-t} \delta_i' \quad (12.10) \\
+&G_{t:t+k}^\lambda = \widehat{v}(S_{t}, \mathbf{w}_{t-1}) + \sum_{i=t}^{t+k-1} (\gamma\lambda)^{i-t} \delta_i' \quad (12.10) \\
 &\text{where} \\
 &\delta_t' \dot{=} R_{t+1} + \gamma \widehat{v}(S_{t+1}, \mathbf{w}_t) - \widehat{v}(S_t, \mathbf{w}_{t-1})
 \end{aligned}
