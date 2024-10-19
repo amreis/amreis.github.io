@@ -4,7 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Hi, I'm Alister Machado dos Reis, a 27-years old PhD Student from Porto Alegre, Brazil, currently living in Utrecht, the Netherlands. I obtained my B.Sc. in Computer Science ([Institute of Informatics](https://www.inf.ufrgs.br/site/)) at the Federal University of Rio Grande do Sul ([UFRGS](http://www.ufrgs.br/ufrgs/inicial)) in March 2018.
+
+
+Hi, I'm Alister Machado dos Reis, a <span id="age"></span>-years old PhD Student from Porto Alegre, Brazil, currently living in Utrecht, the Netherlands. I obtained my B.Sc. in Computer Science ([Institute of Informatics](https://www.inf.ufrgs.br/site/)) at the Federal University of Rio Grande do Sul ([UFRGS](http://www.ufrgs.br/ufrgs/inicial)) in March 2018.
 I was also part of the BRAFITEC exchange program between the years of 2015 and 2017. It is one of the most competitive exchange programs of my country.
 
 As a part of this program, I was also enrolled at the INP Grenoble (Institut National Polytechnique de Grenoble) in Grenoble, France. There, I was a student at the École Nationale Supérieure d'Informatique et Mathématiques Apliquées de Grenoble (ENSIMAG). I was enrolled as an Information Systems Engineering student between 2015 and 2016, and later I was a student in the Master's Program in Data Science (2016-2017).
@@ -17,7 +19,7 @@ Currently I'm a PhD Student at the [Utrecht University](https://www.uu.nl/) with
 
 When I started this blog, I was doing mostly Reinforcement Learning. Since then, my interests have shifted towards Multidimensional Projections and High-Dimensional Data Visualization, especially with the aid of Machine Learning methods.
 
-You can find me on [LinkedIn](https://www.linkedin.com/in/alistermachado/), [Github](https://github.com/amreis/) and [Twitter](https://twitter.com/MachadoAlister), and here is my (outdated) [Resume](/assets/cv/CV_AlisterReis.pdf).
+You can find me on [LinkedIn](https://www.linkedin.com/in/alistermachado/), [Github](https://github.com/{{site.github_username}}/) and [Twitter](https://twitter.com/{{site.twitter_username}}), and here is my [Resume](/assets/cv/CV_AlisterReis.pdf), updated in October 2024.
 
 Hope you enjoy the content!
 
@@ -32,3 +34,12 @@ You can find the source code for Jekyll at
 {% include icon-github.html username="jekyll" %} /
 [jekyll](https://github.com/jekyll/jekyll)
 -->
+
+<script type='text/javascript'>
+    let today = new Date();
+    let myAge = today.getFullYear() - 1995 - 1;
+    if (today.getMonth() >= 12 && today.getDate() >= 19) {
+        myAge += 1;
+    }
+    document.getElementById("age").innerHTML = myAge;
+</script>
