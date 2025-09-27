@@ -102,9 +102,11 @@ Fitting such a model is theory we already know at this point in the book. The ML
 $$
 \begin{align}
 \widehat{\mu} &=  \frac{1}{n} \sum_{i=1}^n \mathbf{v}_i \\
-\widehat{\Sigma} &= \frac{1}{n} \sum_{i=1}^n (\mathbf{v} - \widehat{\mu})(\mathbf{v} - \widehat{\mu})^T.
+\widehat{\Sigma} &= \frac{1}{n} \sum_{i=1}^n (\mathbf{v}_i - \widehat{\mu})(\mathbf{v}_i - \widehat{\mu})^T,
 \end{align}
 $$
+
+where I'm using \\(\mathbf{v}_i\\) to represent each observation (so as to not cause confusion with our use of \\(\mathbf{x}, y\\). In this exercise, \\(\mathbf{v_i} = [\mathbf{x}_i^T y_i]^T\\).
 
 ## MLE for the Joint Mean
 
@@ -199,11 +201,13 @@ In the expression above, we have one term that is independent of \\(\mathbf{x}\\
 $$
 \begin{align}
 \mathbf{w}^T &= \Sigma _{YX} \Sigma _{XX}^{-1} = (\Sigma _{XY}^T) (\frac{1}{n} \mathbf{X}_c^T \mathbf{X}_c)^{-1} = n (\frac{1}{n} \mathbf{X}_c^T \mathbf{y}_c)^T (\mathbf{X}_c^T \mathbf{X}_c)^{-1} \\
-\mathbf{w} &= ((\mathbf{X}_c^T \mathbf{y}_c)^T(\mathbf{X}_c^T\mathbf{X}_c)^{-1})^T = (\mathbf{X}_c^T \mathbf{X}_c)^{-T} (\mathbf{X}_c^T \mathbf{y}_c) = (\mathbf{X}_c^T\mathbf{X}_c)\mathbf{X}_c^T \mathbf{y}_c
+\mathbf{w} &= ((\mathbf{X}_c^T \mathbf{y}_c)^T(\mathbf{X}_c^T\mathbf{X}_c)^{-1})^T = (\mathbf{X}_c^T \mathbf{X}_c)^{-T} (\mathbf{X}_c^T \mathbf{y}_c) = (\mathbf{X}_c^T\mathbf{X}_c)^{-1}\mathbf{X}_c^T \mathbf{y}_c
 \end{align}
-$$
+$$,
 
-and
+where we use the fact that the inverse of a symmetric matrix is also symmetric (*i.e.*, \\((\mathbf{X}_c^T \mathbf{X}_c)^{-T} = (\mathbf{X}_c^T \mathbf{X}_c)^{-1})^T = (\mathbf{X}_c^T \mathbf{X}_c^T)^{-1}\\)).
+
+As for \\(w_0\\), we have:
 
 $$
 w_0 = \bar{y} - \Sigma _{YX} \Sigma _{XX}^{-1} \bar{\mathbf{x}},
@@ -216,6 +220,24 @@ w_0 = \bar{y} - \mathbf{w}^T \bar{\mathbf{x}}.
 $$
 
 This concludes the proof.
+
+## Second part of the Exercise
+
+> What are the advantages and disadvantages of this approach compared to the standard discriminative approach?
+
+Well, let's see... the most obvious advantage is that now we have a full-blown generative model for \\(\mathbf{X}, Y\\). This means we can compute the conditional distribution *in the other sense* just as easily!
+
+$$
+\begin{align}
+p(\mathbf{x} | y) &= \mathscr{N}(\mathbf{x} | \mu _{X | Y}, \Sigma _{X|Y}) \\
+\mu _{X|Y} &= \mu_X + \Sigma _{XY} \Sigma _{YY}^{-1} (y - \mu_Y) \\
+\Sigma _{X|Y} &= \Sigma _{XX} - \Sigma _{XY} \Sigma _{YY}^{-1} \Sigma _{YX}
+\end{align}
+$$
+
+This allows us to easily sample data points that are associated with a given value for the regressed variable, for example. We can also easily derive marginals for both \\(\mathbf{x}\\) and \\(y\\).
+
+As for the disadvantages, honestly I do not see any so far. Typically, when fitting a joint directly, it might be harder to find samples for all relevant regions of the data space. But here, it's not the case: the computations are all the same for the full joint and for the discriminative model. We still have to compute \\(\mathbf{w}\\) and \\(w_0\\), just as before. We just have some more machinery to sample for conditionals and marginals, if we choose to do so.
 
 
 ## References
