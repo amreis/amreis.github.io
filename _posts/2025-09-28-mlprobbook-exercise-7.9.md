@@ -179,7 +179,7 @@ $$
 \begin{align}
 p(\mathbf{x}_1 | \mathbf{x_2}) & = \mathscr{N}(\mathbf{x}_1 | \mu _{1|2}, \Sigma _{1|2}) \\
 \mu _{1|2} &= \mu_1 + \Sigma _{12} \Sigma _{22}^{-1}(\mathbf{x}_2 - \mu_2) \\
-\Sigma _{1|2} &= \Sigma _{11} - \Sigma _{12} \Sigma _{22}^-1 \Sigma _{21} \\
+\Sigma _{1|2} &= \Sigma _{11} - \Sigma _{12} \Sigma _{22}^{-1} \Sigma _{21} \\
 \end{align}
 $$
 
