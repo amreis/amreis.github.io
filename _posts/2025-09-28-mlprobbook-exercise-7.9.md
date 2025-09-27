@@ -106,7 +106,7 @@ $$
 \end{align}
 $$
 
-where I'm using \\(\mathbf{v}_i\\) to represent each observation (so as to not cause confusion with our use of \\(\mathbf{x}, y\\). In this exercise, \\(\mathbf{v_i} = [\mathbf{x}_i^T y_i]^T\\).
+where I'm using \\(\mathbf{v}_i\\) to represent each observation (so as to not cause confusion with our use of \\(\mathbf{x}, y\\)). In this exercise, \\(\mathbf{v_i} = [\mathbf{x}_i^T y_i]^T\\).
 
 ## MLE for the Joint Mean
 
@@ -225,7 +225,7 @@ This concludes the proof.
 
 > What are the advantages and disadvantages of this approach compared to the standard discriminative approach?
 
-Well, let's see... the most obvious advantage is that now we have a full-blown generative model for \\(\mathbf{X}, Y\\). This means we can compute the conditional distribution *in the other sense* just as easily!
+Well, let's see... the most obvious advantage is that now we have a full-blown generative model for \\(\mathbf{X}, Y\\). This means we can compute the conditional distribution *in the other direction* just as easily!
 
 $$
 \begin{align}
