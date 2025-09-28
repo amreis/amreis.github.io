@@ -1,5 +1,5 @@
 ---
-title: "Machine Learning: A Probabilistic Approach, Exercise 7.9"
+title: "Machine Learning: A Probabilistic Perspective, Exercise 7.9"
 date: 2025-09-27 09:00:00 +0200
 description: Resolution of the exercise 7.9 in Murphy's book
 tags: machine-learning exercises probability
