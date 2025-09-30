@@ -205,7 +205,7 @@ $$
 \end{align}
 $$,
 
-where we use the fact that the inverse of a symmetric matrix is also symmetric (*i.e.*, \\((\mathbf{X}_c^T \mathbf{X}_c)^{-T} = ((\mathbf{X}_c^T \mathbf{X}_c)^{-1})^T = (\mathbf{X}_c^T \mathbf{X}_c^T)^{-1}\\)).
+where we use the fact that the inverse of a symmetric matrix is also symmetric (*i.e.*, \\((\mathbf{X}_c^T \mathbf{X}_c)^{-T} = ((\mathbf{X}_c^T \mathbf{X}_c)^{-1})^T = (\mathbf{X}_c^T \mathbf{X}_c)^{-1}\\)).
 
 As for \\(w_0\\), we have:
 
