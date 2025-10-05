@@ -62,7 +62,7 @@ So far in this Chapter, we have been fitting the regression coefficients directl
 That is, we have been assuming a model of the form
 $$
 \begin{equation}
-p(y | \mathbf{x}) = \mathscr{N}(y | w_0 + \mathbf{w}^T \mathbf{x}, \sigma^2).
+p(y | \mathbf{x}) = \mathcal{N}(y | w_0 + \mathbf{w}^T \mathbf{x}, \sigma^2).
 \end{equation}
 $$
 We then perform maximization of this likelihood (or better, of its log form, since the log-likelihood has the same optimum as the likelihood), assuming a dataset of entries has been seen. This leads to the minimization of the negative log-likelihood function (NLL), which has the form
@@ -86,7 +86,7 @@ The process for building the model is quite different, but should lead us to the
 To fit a joint model to X and y, we simply consider that we have a distribution over the *concatenated* \\(\mathbf{x}\\) and \\(y\\) values. That is, assume a model, which will be a Gaussian, of the form:
 
 $$
-p\left(\begin{bmatrix} \mathbf{x} \\ y\end{bmatrix}\right) = \mathscr{N}\left(\begin{bmatrix} \mathbf{x} \\ y\end{bmatrix} \Bigg| \mu, \Sigma \right).
+p\left(\begin{bmatrix} \mathbf{x} \\ y\end{bmatrix}\right) = \mathcal{N}\left(\begin{bmatrix} \mathbf{x} \\ y\end{bmatrix} \Bigg| \mu, \Sigma \right).
 $$
 
 In this model, we can identify:
@@ -179,7 +179,7 @@ the following holds:
 
 $$
 \begin{align}
-p(\mathbf{x}_1 | \mathbf{x_2}) & = \mathscr{N}(\mathbf{x}_1 | \mu _{1|2}, \Sigma _{1|2}) \\
+p(\mathbf{x}_1 | \mathbf{x_2}) & = \mathcal{N}(\mathbf{x}_1 | \mu _{1|2}, \Sigma _{1|2}) \\
 \mu _{1|2} &= \mu_1 + \Sigma _{12} \Sigma _{22}^{-1}(\mathbf{x}_2 - \mu_2) \\
 \Sigma _{1|2} &= \Sigma _{11} - \Sigma _{12} \Sigma _{22}^{-1} \Sigma _{21} \\
 \end{align}
@@ -229,7 +229,7 @@ Well, let's see... the most obvious advantage is that now we have a full-blown g
 
 $$
 \begin{align}
-p(\mathbf{x} | y) &= \mathscr{N}(\mathbf{x} | \mu _{X | Y}, \Sigma _{X|Y}) \\
+p(\mathbf{x} | y) &= \mathcal{N}(\mathbf{x} | \mu _{X | Y}, \Sigma _{X|Y}) \\
 \mu _{X|Y} &= \mu_X + \Sigma _{XY} \Sigma _{YY}^{-1} (y - \mu_Y) \\
 \Sigma _{X|Y} &= \Sigma _{XX} - \Sigma _{XY} \Sigma _{YY}^{-1} \Sigma _{YX}
 \end{align}
