@@ -4,7 +4,7 @@ date: 2017-07-08 12:57:00 -0700
 description: Temporal Difference methods for State-Value estimation
 tags: reinforcement-learning mdp optimal-control machine-learning
 categories: ml reinf-learn
-layout: post
+layout: default
 ---
 
 In the first post about _policy evaluation_, our current subject, I talked a bit about concepts such as reward goals, value functions and gave an example algorithm on how to compute these last ones. Of course, that's not the only option available (and to be honest, it's not the one that performs best either).

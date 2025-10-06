@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Math Test post"
 date:   2017-05-16 21:54:35 -0700
 categories: test math 

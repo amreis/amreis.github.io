@@ -1,6 +1,6 @@
 ---
 title: "Reinforcement Learning: Evaluating Behavior"
-layout: post
+layout: default
 date: 2017-05-28 17:33:20 -0700
 categories: ml reinf-learn
 tags: policy-evaluation monte-carlo

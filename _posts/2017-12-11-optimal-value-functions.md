@@ -1,6 +1,6 @@
 ---
 title: "On Optimal Value Functions"
-layout: post
+layout: default
 date: 2017-12-21 18:22:20 -0200
 categories: ml reinf-learn
 tags: reinforcement-learning value-function bellman optimality

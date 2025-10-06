@@ -4,7 +4,7 @@ date: 2025-09-27 09:00:00 +0200
 description: Resolution of the exercise 7.9 in Murphy's book
 tags: machine-learning exercises probability
 categories: ml prob-ml
-layout: post
+layout: default
 ---
 
 ## Hello again!

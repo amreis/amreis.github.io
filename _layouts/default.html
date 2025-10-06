@@ -2,21 +2,8 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
   {% include head.html %}
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: {
-          equationNumbers: {
-            autoNumber: "AMS"
-          }
-        },
-        tex2jax: {
-          inlineMath: [ ['$', '$'], ['\(', '\)'] ],
-          displayMath: [ ['$$', '$$'] ],
-          processEscapes: true,
-        }
-      });
-    </script>
+
+  {% include mathjax_support.html %}
 
   <body>
 

@@ -13,19 +13,26 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Alister Reis's blog
+title: Alister Machado's blog
 email: alister.reis@gmail.com
 description: ""
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://amreis.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: machadoalister
 github_username:  amreis
+author:
+  name: Alister Machado dos Reis
+  email: alister.reis@gmail.com
 
 # Build settings
 markdown: kramdown
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 exclude:
   - Gemfile
   - Gemfile.lock
+remote_theme: jekyll/minima
+minima:
+  skin: auto # Or auto if you want it to switch with your system settings.
