@@ -5,6 +5,7 @@ description: Resolution of the exercise 6.1 in Sutton and Barto's book, 2nd edit
 tags: reinforcement-learning mdp machine-learning exercises rlbook
 categories: ml reinf-learn
 layout: default
+author: machadoalister
 ---
 
 It's been a while since I posted here... in fact, so long I'm not sure I even know my way around this thing anymore.

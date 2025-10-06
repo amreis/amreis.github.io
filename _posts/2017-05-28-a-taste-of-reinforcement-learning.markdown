@@ -5,6 +5,7 @@ description: An introduction to Reinforcement Learning
 tags: reinforcement-learning mdp optimal-control machine-learning
 categories: ml reinf-learn
 layout: default
+author: machadoalister
 ---
 
 This post also appeared in *dev.to* as [A Taste of Reinforcement Learning](https://dev.to/amreis/a-taste-of-reinforcement-learning)

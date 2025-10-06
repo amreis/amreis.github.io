@@ -5,6 +5,7 @@ description: Resolution of the exercise 11.2 in Kevin P. Murphy's book
 tags: machine-learning exercises probability
 categories: ml prob-ml
 layout: default
+author: machadoalister
 ---
 
 
