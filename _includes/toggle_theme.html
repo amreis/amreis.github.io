@@ -48,13 +48,27 @@ if (document.documentElement.getAttribute("data-theme") == "dark"){
     toggleSwitch.checked = true;
 }
 
+
+let previousScrollProps = window.pageYOffset;
+function handleScroll(ev) {
+    let currentScrollProps = window.pageYOffset;
+    if (currentScrollProps <= previousScrollProps) {
+        document.getElementById("theme-switch").style.insetInlineStart = "calc(100vw - 5em)";
+    } else {
+        document.getElementById("theme-switch").style.insetInlineStart = "105vw";
+    }
+    previousScrollProps = currentScrollProps;
+}
+window.addEventListener("scroll", handleScroll);
+window.addEventListener("touchmove", handleScroll);
+
 </script>
 
 <style type="text/css">
   .toggle-theme-btn {
     position: fixed;
     inset-inline-start: calc(100vw - 5em);
-    inset-block-start: calc(100vh - 5em);
+    inset-block-start: calc(100vh - 9em);
     width: 3em;
     height: 3em;
     /* background-color: white; */
@@ -73,6 +87,8 @@ if (document.documentElement.getAttribute("data-theme") == "dark"){
     background-repeat: no-repeat;
     filter: invert(.2);
     z-index: 100;
+
+    transition: inset-inline-start 0.3s;
   }
   .toggle-theme-btn:checked {
     filter: invert(1);
