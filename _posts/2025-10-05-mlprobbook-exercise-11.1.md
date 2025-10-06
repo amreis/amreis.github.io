@@ -1,11 +1,11 @@
 ---
 title: "Machine Learning: A Probabilistic Perspective, Exercise 11.1"
 date: 2025-10-05 22:00:00 +0200
-description: Resolution of the exercise 11.1 in Kevin P. Murphy's book
+description: Resolution of Exercise 11.1 in Kevin P. Murphy's book
 tags: machine-learning exercises probability
 categories: ml prob-ml
-layout: default
-author: machadoalister
+layout: post
+author: Alister Machado
 ---
 
 

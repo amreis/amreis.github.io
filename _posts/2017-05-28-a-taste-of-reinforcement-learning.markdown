@@ -4,8 +4,8 @@ date: 2017-05-28 17:20:00 -0700
 description: An introduction to Reinforcement Learning
 tags: reinforcement-learning mdp optimal-control machine-learning
 categories: ml reinf-learn
-layout: default
-author: machadoalister
+layout: post
+author: Alister Machado
 ---
 
 This post also appeared in *dev.to* as [A Taste of Reinforcement Learning](https://dev.to/amreis/a-taste-of-reinforcement-learning)

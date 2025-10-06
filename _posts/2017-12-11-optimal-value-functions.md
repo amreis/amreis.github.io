@@ -1,11 +1,11 @@
 ---
 title: "On Optimal Value Functions"
-layout: default
+layout: post
 date: 2017-12-21 18:22:20 -0200
 categories: ml reinf-learn
 tags: reinforcement-learning value-function bellman optimality
 description: "Definitions and devices used to calculate optimal value functions"
-author: machadoalister
+author: Alister Machado
 ---
 
 For the last posts, we have been talking a lot about ways to determine the _value_
