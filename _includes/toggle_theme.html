@@ -61,7 +61,7 @@ function handleScroll(ev) {
     if (previousScrollProps - currentScrollProps >= 10) {
         targetElem.style.transform = "";
     } else if (currentScrollProps > previousScrollProps) {
-        targetElem.style.transform ||= "translate(18vw, 0vw)";
+        targetElem.style.transform ||= "translate(20vw, 0vw)";
     }
     previousScrollProps = currentScrollProps > 0 ? currentScrollProps : previousScrollProps;
     enableScrollEvent = false;

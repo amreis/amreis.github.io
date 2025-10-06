@@ -34,5 +34,8 @@ $width: calc(min(max(5vw, 5vh), 50px));
   .toggle-theme-btn {
     width: 10vw;
     height: 10vw;
+
+    bottom: 10vw;
+    right: 3vw;
   }
 }
