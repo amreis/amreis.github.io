@@ -57,7 +57,8 @@ function handleScroll(ev) {
     } else {
         document.getElementById("theme-switch").style.insetInlineStart = "105vw";
     }
-    previousScrollProps = currentScrollProps;
+    previousScrollProps = currentScrollProps > 0 ? currentScrollProps : previousScrollProps;
+    setTimeout(() => {}, 1000);
 }
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("touchmove", handleScroll);
