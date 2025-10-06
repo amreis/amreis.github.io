@@ -53,9 +53,9 @@ let previousScrollProps = window.pageYOffset;
 function handleScroll(ev) {
     let currentScrollProps = window.pageYOffset;
     if (currentScrollProps <= previousScrollProps) {
-        document.getElementById("theme-switch").style.insetInlineStart = "calc(100vw - 5em)";
+        document.getElementById("theme-switch").style.transform = "";
     } else {
-        document.getElementById("theme-switch").style.insetInlineStart = "105vw";
+        document.getElementById("theme-switch").style.transform = "translate(18vw, 0vw)";
     }
     previousScrollProps = currentScrollProps > 0 ? currentScrollProps : previousScrollProps;
     setTimeout(() => {}, 1000);
@@ -68,10 +68,10 @@ window.addEventListener("touchmove", handleScroll);
 <style type="text/css">
   .toggle-theme-btn {
     position: fixed;
-    inset-inline-start: calc(100vw - 5em);
-    inset-block-start: calc(100vh - 9em);
-    width: 3em;
-    height: 3em;
+    inset-inline-start: calc(100vw - 13vw - 5vw);
+    inset-block-start: 85vh;
+    width: 13vw;
+    height: 13vw;
     /* background-color: white; */
     border-radius: 50%;
     vertical-align: middle;
@@ -89,7 +89,7 @@ window.addEventListener("touchmove", handleScroll);
     filter: invert(.2);
     z-index: 100;
 
-    transition: inset-inline-start 0.3s;
+    transition: transform 0.3s;
   }
   .toggle-theme-btn:checked {
     filter: invert(1);
