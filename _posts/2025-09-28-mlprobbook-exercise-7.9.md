@@ -202,9 +202,9 @@ In the expression above, we have one term that is independent of \\(\mathbf{x}\\
 $$
 \begin{align}
 \mathbf{w}^T &= \Sigma _{YX} \Sigma _{XX}^{-1} = (\Sigma _{XY}^T) (\frac{1}{n} \mathbf{X}_c^T \mathbf{X}_c)^{-1} = n (\frac{1}{n} \mathbf{X}_c^T \mathbf{y}_c)^T (\mathbf{X}_c^T \mathbf{X}_c)^{-1} \\
-\mathbf{w} &= ((\mathbf{X}_c^T \mathbf{y}_c)^T(\mathbf{X}_c^T\mathbf{X}_c)^{-1})^T = (\mathbf{X}_c^T \mathbf{X}_c)^{-T} (\mathbf{X}_c^T \mathbf{y}_c) = (\mathbf{X}_c^T\mathbf{X}_c)^{-1}\mathbf{X}_c^T \mathbf{y}_c
+\mathbf{w} &= ((\mathbf{X}_c^T \mathbf{y}_c)^T(\mathbf{X}_c^T\mathbf{X}_c)^{-1})^T = (\mathbf{X}_c^T \mathbf{X}_c)^{-T} (\mathbf{X}_c^T \mathbf{y}_c) = (\mathbf{X}_c^T\mathbf{X}_c)^{-1}\mathbf{X}_c^T \mathbf{y}_c,
 \end{align}
-$$,
+$$
 
 where we use the fact that the inverse of a symmetric matrix is also symmetric (*i.e.*, \\((\mathbf{X}_c^T \mathbf{X}_c)^{-T} = ((\mathbf{X}_c^T \mathbf{X}_c)^{-1})^T = (\mathbf{X}_c^T \mathbf{X}_c)^{-1}\\)).
 
