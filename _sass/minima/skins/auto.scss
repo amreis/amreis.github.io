@@ -155,7 +155,7 @@ $dm-table-border-color:    $dm-border-color-01 !default;
 // ----------------------------------------------------------------------------
 
 @mixin dm-highlight {
-  .highlight {
+  :root[data-theme="dark"] .highlight {
     .err   { color: #e3d2d2; background-color: #8c2121 } // Error
 
     .c     { color: #8a8a8a } // Comment
@@ -300,7 +300,7 @@ $table-border-color: $lm-table-border-color;
   @include lm-highlight;
 
   @media (prefers-color-scheme: dark) {
-    [data-theme="dark"] {
+    :root[data-theme="dark"] {
       --minima-brand-color: #{$dm-brand-color};
       --minima-brand-color-light: #{$dm-brand-color-light};
       --minima-brand-color-dimmed: #{$dm-brand-color-dimmed};
