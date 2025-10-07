@@ -92,7 +92,7 @@ $$
 
 &\int \frac{1}{\sqrt{\frac{2\pi \tau^2}{z}}} \exp\left[ -\frac{1}{2 \frac{\tau^2}{z}} \left(x - \mu\right)^2\right] \frac{\left(\frac{\nu}{2}\right)^{\frac{\nu}{2}}}{\Gamma\left(\frac{\nu}{2}\right)} z^{\frac{\nu}{2} - 1} \exp\left(\frac{-\nu}{2} z \right) \D z = \\
 
-&\int \frac{\sqrt{z}}{\sqrt{2\pi}\tau} \exp\left[ -\frac{z}{2\tau^2}\right] \frac{\left(\frac{\nu}{2}\right)^{\frac{\nu}{2}}}{\Gamma\left(\frac{\nu}{2}\right)} z^{\frac{\nu}{2} - 1} \exp\left(\frac{-\nu}{2}\right) \D z = \\
+&\int \frac{\sqrt{z}}{\sqrt{2\pi}\tau} \exp\left[ -\frac{z}{2\tau^2} (x - \mu)^2 \right] \frac{\left(\frac{\nu}{2}\right)^{\frac{\nu}{2}}}{\Gamma\left(\frac{\nu}{2}\right)} z^{\frac{\nu}{2} - 1} \exp\left(\frac{-\nu}{2}\right) \D z = \\
 
 &\frac{1}{\sqrt{2\pi} \tau} \frac{\left(\frac{\nu}{2}\right)^\frac{\nu}{2}}{\Gamma\left(\frac{\nu}{2}\right)} \int \exp\left[-\frac{z}{2} \left(\left(\frac{x - \mu}{\tau}\right)^2 + \nu \right)\right] z^{\frac{1}{2} + \frac{\nu}{2} - 1} \D z =\\
 
