@@ -103,7 +103,7 @@ G_{t:t+k}^\lambda =& (1-\lambda)\sum_{n=1}^{k-1} \lambda^{n-1} G_{t:t+n} + \lamb
 =& (1-\lambda)\sum_{n=1}^{k} \lambda^{n-1} G_{t:t+n} \\
 =& (1-\lambda)[G_{t:t+1} + \sum_{n=2}^k \lambda^{n-1} G_{t:t+n}] \quad &\text{(pulling one term out of the sum)} \\
 =& (1-\lambda)[R_{t+1} + \gamma \widehat{v}(S_{t+1})] + (1-\lambda)\sum_{n=2}^k \lambda^{n-1} G_{t:t+n} \\
-=& (1-\lambda)[R_{t+1} + \gamma \widehat{v}(S_{t+1}) - \color{red}{\widehat{v}(S_t)}] + (1-\lambda)[\sum_{n=2}^k \lambda^{n-1} G_{t:t+n} + \color{red}{\widehat{v}(S_t)}] \quad &\text{(adding 0 in a convenient way)} \\
+=& (1-\lambda)[R_{t+1} + \gamma \widehat{v}(S_{t+1}) - {\color{red}\widehat{v}(S_t)}] + (1-\lambda)[\sum_{n=2}^k \lambda^{n-1} G_{t:t+n} + {\color{red}\widehat{v}(S_t)}] \quad &\text{(adding 0 in a convenient way)} \\
 =& (1-\lambda)\delta_t + (1-\lambda)[\sum_{n=2}^k \lambda^{n-1}G_{t:t+n} + \widehat{v}(S_t)]
 \end{aligned}
 $$
@@ -119,7 +119,7 @@ Let's keep going:
 
 $$\begin{aligned}
 =& \delta_t - \lambda \delta_t + \widehat{v}(S_t) - \lambda\widehat{v}(S_t) +
-  \underbrace{\sum_{n=2}^k \lambda^{n-1}G_{t:t+n} -\lambda\sum_{n=2}^k \lambda^{n-1}G_{t:t+n}}_{\text{we'll look into this specific part for answers}} \quad \color{blue}{(A)}
+  \underbrace{\sum_{n=2}^k \lambda^{n-1}G_{t:t+n} -\lambda\sum_{n=2}^k \lambda^{n-1}G_{t:t+n}}_{\text{we'll look into this specific part for answers}} \quad {\color{blue}(A)}
 \end{aligned}
 $$
 
@@ -130,11 +130,11 @@ $$\begin{align}
 &\lambda G_{t:t+2} - \lambda^2 G_{t:t+2} \\
 &= \lambda (R_{t+1} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2}) - \lambda(R_{t+1} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2}))) \\
 &= \lambda [(1-\lambda) (R_{t+1} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2}))] \\
-&= \lambda [(1-\lambda) (R_{t+1} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2})) \color{blue}{- \delta_t - \widehat{v}(S_t)}] \quad \text{(bringing some terms from } \color{blue}{(A)}\text{ into the expression to see if they help)} \color{red}{(B)} \\
-&= \lambda [(1-\lambda) (R_{t+1} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2})) - R_{t+1} - \gamma\widehat{v}(S_{t+1}) \color{red}{+ \widehat{v}(S_t) - \widehat{v}(S_t)}] \color{red}{(C)} \\
-&= \lambda (\color{red}{R_{t+1}} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2}) - \lambda(R_{t+1} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2})) \color{red}{- R_{t+1}} - \gamma \widehat{v}(S_{t+1})) \\
-&= \lambda (\gamma \color{red}{(R_{t+2} + \gamma \widehat{v}(S_{t+2}) - \widehat{v}(S_{t+1}))} - \lambda(R_{t+1} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2}))) \\
-&= \color{blue}{\lambda\gamma\delta_{t+1}} - \lambda^2 (\dots)
+&= \lambda [(1-\lambda) (R_{t+1} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2})) {\color{blue}- \delta_t - \widehat{v}(S_t)}] \quad \text{(bringing some terms from } {\color{blue}(A)}\text{ into the expression to see if they help)} {\color{red}(B)} \\
+&= \lambda [(1-\lambda) (R_{t+1} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2})) - R_{t+1} - \gamma\widehat{v}(S_{t+1}) {\color{red}+ \widehat{v}(S_t) - \widehat{v}(S_t)}] {\color{red}(C)} \\
+&= \lambda ({\color{red}R_{t+1}} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2}) - \lambda(R_{t+1} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2})) {\color{red}- R_{t+1}} - \gamma \widehat{v}(S_{t+1})) \\
+&= \lambda (\gamma {\color{red}(R_{t+2} + \gamma \widehat{v}(S_{t+2}) - \widehat{v}(S_{t+1}))} - \lambda(R_{t+1} + \gamma R_{t+2} + \gamma^2 \widehat{v}(S_{t+2}))) \\
+&= {\color{blue}\lambda\gamma\delta_{t+1}} - \lambda^2 (\dots)
 \end{align}
 $$
 
@@ -152,7 +152,7 @@ This means that (A) could be rewritten as
 
 $$\begin{aligned}
 &= \delta_t + \widehat{v}(S_t) - \lambda G_{t:t+1} + \sum_{n=2}^k \lambda^{n-1}G_{t:t+n} -\lambda\sum_{n=2}^k \lambda^{n-1}G_{t:t+n} \\
-&= \delta_t + \widehat{v}(S_t) - \underbrace{\lambda G_{t:t+1}}_{\text{merge with last summation}} + \sum_{n=2}^k \lambda^{n-1}G_{t:t+n} - \sum_{n=2}^k \color{red}{\lambda^{n}}G_{t:t+n} \\
+&= \delta_t + \widehat{v}(S_t) - \underbrace{\color{red} \lambda G_{t:t+1}}_{\text{merge with last summation}} + \sum_{n=2}^k \lambda^{n-1}G_{t:t+n} - \sum_{n=2}^k {\color{red} \lambda^{n}G_{t:t+n}} \\
 &= \delta_t + \widehat{v}(S_t) + \underbrace{\sum_{n=2}^k \lambda^{n-1}G_{t:t+n}}_{\text{has k - 1 terms}} - \underbrace{\sum_{\color{red}{n=1}}^k \lambda^{n}G_{t:t+n}}_{\text{has k terms}} \\
 &= \delta_t + \widehat{v}(S_t) + \underbrace{\sum_{n=2}^k \lambda^{n-1}G_{t:t+n}}_{\text{has k - 1 terms}} - \underbrace{\sum_{n=1}^{\color{red}{k-1}} \lambda^{n}G_{t:t+n}}_{\text{has k - 1 terms}} - \lambda^k G_{t:t+k} \\
 &= \delta_t + \widehat{v}(S_t) + \sum_{i=1}^{k-1} \lambda^i(G_{t:t+i+1} - G_{t:t+i}) - \lambda^k G_{t:t+k} \quad \text{(group terms by } \lambda\text{'s exponent)}
