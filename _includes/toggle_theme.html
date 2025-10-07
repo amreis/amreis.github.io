@@ -4,11 +4,11 @@
     //determines if the user has a set theme
     function detectColorScheme() {
         //local storage is used to override OS theme settings
-        let storedTheme = localStorage.getItem("theme");
+        const storedTheme = localStorage.getItem("theme");
 
         // If theme is already stored, use that. Otherwise, try to use
         // a media query. If matchMedia is not supported, default to light.
-        let theme = storedTheme ?? (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)") ? "dark" : "light");
+        const theme = storedTheme ?? (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)") ? "dark" : "light");
         document.documentElement.setAttribute("data-theme", theme);
     }
     detectColorScheme();
