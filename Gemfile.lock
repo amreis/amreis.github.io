@@ -331,6 +331,7 @@ DEPENDENCIES
   github-pages
   jekyll-feed (~> 0.6)
   jekyll-remote-theme (~> 0.4.1)
+  jekyll-sitemap
   minima (~> 2.5)
   tzinfo-data
 
