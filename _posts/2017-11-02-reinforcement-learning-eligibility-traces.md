@@ -5,7 +5,6 @@ description: Eligibility Traces in Temporal Difference Methods
 tags: reinforcement-learning mdp optimal-control machine-learning
 categories: ml reinf-learn
 layout: post
-author: Alister Machado
 ---
 
 In the last post of this series, we talked about _temporal difference_ methods.

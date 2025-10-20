@@ -5,7 +5,6 @@ description: Resolution of the exercise 12.5 in Sutton and Barto's book, 2nd edi
 tags: reinforcement-learning mdp machine-learning exercises rlbook td td-lambda
 categories: ml reinf-learn
 layout: post
-author: Alister Machado
 ---
 
 Damn, I have to post things more regularly... it's been tough to keep writing

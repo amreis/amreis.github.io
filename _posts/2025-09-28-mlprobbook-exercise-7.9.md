@@ -5,7 +5,6 @@ description: Resolution of Exercise 7.9 in Murphy's book
 tags: machine-learning exercises probability
 categories: ml prob-ml
 layout: post
-author: Alister Machado
 ---
 
 ## Hello again!
