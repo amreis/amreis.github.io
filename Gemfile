@@ -18,6 +18,10 @@ gem "minima", "~> 2.5"
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 gem "github-pages", group: :jekyll_plugins
 
+# Alister: there's a weird error going on with OpenSSL, maybe this will
+# fix it.
+gem "openssl"
+
 # If you have any plugins, put them here!
 group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"
