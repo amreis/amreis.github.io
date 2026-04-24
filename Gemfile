@@ -22,6 +22,10 @@ gem "github-pages", group: :jekyll_plugins
 # fix it.
 gem "openssl"
 
+
+# There's a vulnerability in addressable < 2.9.0
+gem "addressable", ">= 2.9.0"
+
 # If you have any plugins, put them here!
 group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"
