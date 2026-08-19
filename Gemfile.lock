@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (8.1.3)
+    activesupport (8.1.3.1)
       base64
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.3.1)
@@ -39,22 +39,19 @@ GEM
       ffi (>= 1.15.0)
       logger
     eventmachine (1.2.7)
-    execjs (2.10.1)
+    execjs (2.10.2)
+      json (>= 2)
     faraday (2.14.3)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
     faraday-net_http (3.4.4)
       net-http (~> 0.5)
-    ffi (1.17.4)
     ffi (1.17.4-aarch64-linux-gnu)
     ffi (1.17.4-aarch64-linux-musl)
-    ffi (1.17.4-aarch64-mingw-ucrt)
     ffi (1.17.4-arm-linux-gnu)
     ffi (1.17.4-arm-linux-musl)
     ffi (1.17.4-arm64-darwin)
-    ffi (1.17.4-x86-linux-gnu)
-    ffi (1.17.4-x86-linux-musl)
     ffi (1.17.4-x86_64-darwin)
     ffi (1.17.4-x86_64-linux-gnu)
     ffi (1.17.4-x86_64-linux-musl)
@@ -228,7 +225,7 @@ GEM
       gemoji (>= 3, < 5)
       html-pipeline (~> 2.2)
       jekyll (>= 3.0, < 5.0)
-    json (2.21.1)
+    json (2.21.2)
     kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -240,7 +237,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
     mercenary (0.3.6)
-    mini_portile2 (2.8.9)
     minima (2.5.1)
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
@@ -250,9 +246,6 @@ GEM
       prism (~> 1.5)
     net-http (0.9.1)
       uri (>= 0.11.1)
-    nokogiri (1.19.4)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.19.4-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.19.4-aarch64-linux-musl)
@@ -306,30 +299,12 @@ GEM
     webrick (1.9.2)
 
 PLATFORMS
-  aarch64-linux
-  aarch64-linux-android
   aarch64-linux-gnu
   aarch64-linux-musl
-  aarch64-mingw-ucrt
-  arm-linux-androideabi
   arm-linux-gnu
-  arm-linux-gnueabihf
   arm-linux-musl
-  arm-linux-musleabihf
   arm64-darwin
-  riscv64-linux-android
-  riscv64-linux-gnu
-  riscv64-linux-musl
-  ruby
-  x86-cygwin
-  x86-linux
-  x86-linux-android
-  x86-linux-gnu
-  x86-linux-musl
-  x86-mingw-ucrt
-  x86_64-cygwin
   x86_64-darwin
-  x86_64-linux-android
   x86_64-linux-gnu
   x86_64-linux-musl
 
@@ -347,4 +322,4 @@ RUBY VERSION
    ruby 3.4.9p82
 
 BUNDLED WITH
-   2.5.22
+   2.6.9
