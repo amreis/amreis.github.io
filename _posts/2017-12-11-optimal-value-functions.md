@@ -4,6 +4,7 @@ layout: post
 date: 2017-12-21 18:22:20 -0200
 categories: ml reinf-learn
 tags: reinforcement-learning value-function bellman optimality
+type: maths
 description: "Definitions and devices used to calculate optimal value functions"
 ---
 

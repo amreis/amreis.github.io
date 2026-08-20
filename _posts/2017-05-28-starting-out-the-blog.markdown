@@ -2,6 +2,7 @@
 title: Starting it up!
 categories: misc
 date: 2017-05-28 17:17:00 -0700
+type: maths
 layout: post
 ---
 

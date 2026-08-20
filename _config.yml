@@ -67,4 +67,8 @@ minima:
     - title: Orcid
       icon: orcid
       url: "https://orcid.org/0000-0002-1129-4628"
+  nav_pages:
+    - maths.md
+    - musings.md
+    - about.md
   hide_site_feed_link: true

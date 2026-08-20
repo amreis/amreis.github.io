@@ -4,6 +4,7 @@ date: 2017-11-02 15:18:00 -0200
 description: Eligibility Traces in Temporal Difference Methods
 tags: reinforcement-learning mdp optimal-control machine-learning
 categories: ml reinf-learn
+type: maths
 layout: post
 ---
 

@@ -4,6 +4,7 @@ date: 2017-07-08 12:57:00 -0700
 description: Temporal Difference methods for State-Value estimation
 tags: reinforcement-learning mdp optimal-control machine-learning
 categories: ml reinf-learn
+type: maths
 layout: post
 ---
 

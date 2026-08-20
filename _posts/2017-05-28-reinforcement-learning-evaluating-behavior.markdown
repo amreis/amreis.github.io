@@ -4,6 +4,7 @@ layout: post
 date: 2017-05-28 17:33:20 -0700
 categories: ml reinf-learn
 tags: policy-evaluation monte-carlo
+type: maths
 description: "A post on policy evaluation, one of the most basic tasks in Reinforcement Learning"
 ---
 

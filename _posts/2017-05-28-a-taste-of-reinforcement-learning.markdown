@@ -4,6 +4,7 @@ date: 2017-05-28 17:20:00 -0700
 description: An introduction to Reinforcement Learning
 tags: reinforcement-learning mdp optimal-control machine-learning
 categories: ml reinf-learn
+type: maths
 layout: post
 ---
 
