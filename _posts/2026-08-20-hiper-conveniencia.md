@@ -8,7 +8,7 @@ layout: post
 lang: pt-BR
 ---
 
-Meu melhor amigo acaba de me enviar um post no Instagram que descreve uma conversa — provavelmente fictícia — entre um pai e seu filho. Nessa conversa, o pai diz que não irá mais pedir pizza no delivery. Nunca mais. Super recomendo a leitura, mas trago aqui o ponto principal do raciocínio desse pai, que acredito que ressoará dentro de muitas pessoas que porventura leiam esse texto.
+Meu melhor amigo acaba de me enviar um [post no Instagram](https://www.instagram.com/p/DcN8yt8mP85/) que descreve uma conversa — provavelmente fictícia — entre um pai e seu filho. Nessa conversa, o pai diz que não irá mais pedir pizza no delivery. Nunca mais. Super recomendo a leitura, mas trago aqui o ponto principal do raciocínio desse pai, que acredito que ressoará dentro de muitas pessoas que porventura leiam esse texto.
 
 O pai diz em certo momento “Lembra quando íamos ao restaurante mexicano e conversávamos com os atendentes? Parecia que era algo que a nossa comunidade estava fazendo, ao invés de mais uma transação sem rostos.” O que imediatamente faz o filho responder “sim, lembro que uma vez a mãe bebeu tanta tequila que foi ao banheiro, riu demais e fez xixi nas calças”.
 
