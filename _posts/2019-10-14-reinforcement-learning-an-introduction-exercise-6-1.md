@@ -41,21 +41,23 @@ You can see that this definition is correct (or at least that it _makes sense_) 
 
 In the book, we see that the difference between the return \\(G_t\\) and \\(V({S_t})\\) can be neatly written as a sum of TD-errors, like this:
 
-$$
-G_t - V(S_t) = R_{t+1} + \gamma G_{t+1} - V(S_t) + (\gamma V(S_{t+1}) - \gamma V(S_{t+1})) \\
-= R_{t+1} + \gamma V(S_{t+1}) - V(S_t) + \gamma G_{t+1} - \gamma V(S_{t+1}) \\
-= \delta_t + \gamma (G_{t+1} - V(S_{t+1})) \\
-= \delta_t + \gamma \delta_{t+1} + \gamma^2 (G_{t+2} - \gamma V(S_{t+2})) \\
-= \delta_t + \gamma \delta_{t+1} + \gamma^2 \delta_{t+2} + \cdots + \gamma^{T-t-1} \delta_{T-1} + \gamma^{T - t}(G_T - V(S_T))
+$$\begin{align}
+G_t - V(S_t) &= R_{t+1} + \gamma G_{t+1} - V(S_t) + (\gamma V(S_{t+1}) - \gamma V(S_{t+1})) \\
+&= R_{t+1} + \gamma V(S_{t+1}) - V(S_t) + \gamma G_{t+1} - \gamma V(S_{t+1}) \\
+&= \delta_t + \gamma (G_{t+1} - V(S_{t+1})) \\
+&= \delta_t + \gamma \delta_{t+1} + \gamma^2 (G_{t+2} - \gamma V(S_{t+2})) \\
+&= \delta_t + \gamma \delta_{t+1} + \gamma^2 \delta_{t+2} + \cdots + \gamma^{T-t-1} \delta_{T-1} + \gamma^{T - t}(G_T - V(S_T))
+\end{align}
 $$
 
 Now, we need to pause. This is so we can understand exactly what \\(G_T\\) and \\(V(S_T)\\) are equal to. Let's start with the return:
 
 Remember the definition of \\(G_t\\) in terms of all the rewards that come after it:
 
-$$
+$$\begin{align}
 G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots + \gamma^{T-t-1} R_T\\
-= \sum_{k=t}^{T-1} \gamma^{k-t} R_{k+1}
+&= \sum_{k=t}^{T1-1} \gamma^{k-t} R_{k+1}
+\end{align}
 $$
 
 We can apply the same formula for \\(G_T\\):
@@ -81,10 +83,11 @@ Now we're ready to account for a value function estimate that _changes within th
 
 When we perform a TD update within the episode, it looks like this:
 
-$$
-V_{t+1}(S_t) \dot{=} V_t(S_t) + \alpha [R_{t+1} + \gamma V_t(S_{t+1}) - V_t(S_t)]\\
-= V_t(S_t) + \alpha \delta_t \text{ , and}\\
-V_{t+1}(s') \dot{=} V_t(s') \forall s' \neq S_t
+$$\begin{align}
+V_{t+1}(S_t) \,\dot{=}\, &V_t(S_t) + \alpha [R_{t+1} + \gamma V_t(S_{t+1}) - V_t(S_t)] \\
+= &V_t(S_t) + \alpha \delta_t \text{ , and} \\
+V_{t+1}(s') \dot{=} &V_t(s') \quad \forall s' \neq S_t
+\end{align}
 $$
 
 Let's look at how to express the difference between the return at time \\(t\\) and the value estimate of state \\(S_t\\), which is exactly what Exercise 6.1 asks us to do:
@@ -120,15 +123,16 @@ $$
 where \\(\mathbf{I}\\) is the _indicator function_, which returns \\(1\\) when the predicate inside it is true, and \\(0\\) otherwise. We can then introduce this in our proof:
 
 
-$$
-= \delta_t + \gamma (\mathbf{I}( S_{t+1} = S_t ) (\alpha \delta_t)) + \gamma(G_{t+1} - V_{t+1}(S_{t+1}))\\
-= (1 + \alpha\gamma \mathbf{I}( S_{t+1} = S_t )) \delta_t + \gamma (G_{t+1} - V_{t+1}(S_{t+1}))\\
-= (1 + \alpha\gamma \mathbf{I}( S_{t+1} = S_t )) \delta_t
+$$\begin{align}
+&= \delta_t + \gamma (\mathbf{I}( S_{t+1} = S_t ) (\alpha \delta_t)) + \gamma(G_{t+1} - V_{t+1}(S_{t+1}))\\
+&= (1 + \alpha\gamma \mathbf{I}( S_{t+1} = S_t )) \delta_t + \gamma (G_{t+1} - V_{t+1}(S_{t+1}))\\
+&= (1 + \alpha\gamma \mathbf{I}( S_{t+1} = S_t )) \delta_t
 + \gamma (1 + \alpha\gamma \mathbf{I}(S_{t+2} = S_{t+1}))\delta_{t+1} + \gamma^2 (G_{t+2} - V_{t+2}(S_{t+2}))\\
-= (1 + \alpha \gamma\mathbf{I}( S_{t+2} = S_t )) \delta_t +
+&= (1 + \alpha \gamma\mathbf{I}( S_{t+2} = S_t )) \delta_t +
 \gamma (1+ \alpha \gamma\mathbf{I}( S_{t+2} = S_{t+1}))\delta_{t+1} + \cdots +
 \gamma^{T-t-1}(1 + \alpha \gamma \mathbf{I}( S_T = S_{T-1} ))\delta_{T-1}\\
-= \sum_{k=t}^{T-1} \gamma^{k-t} (1 + \alpha \gamma \mathbf{I}( S_{k+1} = S_k))\delta_k
+&= \sum_{k=t}^{T-1} \gamma^{k-t} (1 + \alpha \gamma \mathbf{I}( S_{k+1} = S_k))\delta_k
+\end{align}
 $$
 
 (again, \\(G_T\\) and \\(V_t(S_T), 0 \leq t \leq T\\) are equal to zero for the same reasons as before).
@@ -141,13 +145,14 @@ Thanks for bearing with me through what I think is a very nice and rewarding pro
 
 When I first attempted this problem, I made an erroneous demonstration, that led to a different result and did not account for cases where \\(S_{t+1} = S_t\\). Plugging this fact into my old proof might have made it too convoluted, so here's another way to get to the same result:
 
-$$
-G_t - V_t(S_t) = R_{t+1} + \gamma G_{t+1} - V_t(S_t) + (\gamma V_t(S_{t+1}) - \gamma V_t(S_{t+1}))\\
-= R_{t+1} + \gamma V_t(S_{t+1}) - V_t(S_t) + \gamma (G_{t+1} - V_t(S_{t+1}))\\
-= \delta_t + \gamma [G_{t+1} - (V_{t+1}(S_{t+1}) - \alpha \delta_t \mathbf{I}(S_{t+1} = S_t))]\\
-= \delta_t + \gamma [G_{t+1} - V_{t+1}(S_{t+1}) + \alpha \delta_t \mathbf{I}(S_{t+1} = S_t)]\\
-= \delta_t + \gamma \alpha \delta_t \mathbf{I}(S_{t+1} = S_t) + \gamma (G_{t+1} - V_{t+1}(S_{t+1}))\\
-= (1 + \alpha\gamma\mathbf{I}(S_{t+1} = S_t))\delta_t + \gamma (G_{t+1} - V_{t+1}(S_{t+1})) = \cdots
+$$\begin{align}
+G_t - V_t(S_t) &= R_{t+1} + \gamma G_{t+1} - V_t(S_t) + (\gamma V_t(S_{t+1}) - \gamma V_t(S_{t+1}))\\
+&= R_{t+1} + \gamma V_t(S_{t+1}) - V_t(S_t) + \gamma (G_{t+1} - V_t(S_{t+1}))\\
+&= \delta_t + \gamma [G_{t+1} - (V_{t+1}(S_{t+1}) - \alpha \delta_t \mathbf{I}(S_{t+1} = S_t))]\\
+&= \delta_t + \gamma [G_{t+1} - V_{t+1}(S_{t+1}) + \alpha \delta_t \mathbf{I}(S_{t+1} = S_t)]\\
+&= \delta_t + \gamma \alpha \delta_t \mathbf{I}(S_{t+1} = S_t) + \gamma (G_{t+1} - V_{t+1}(S_{t+1}))\\
+&= (1 + \alpha\gamma\mathbf{I}(S_{t+1} = S_t))\delta_t + \gamma (G_{t+1} - V_{t+1}(S_{t+1})) = \cdots
+\end{align}
 $$
 
 where the rest of the proof stays exactly the same.
