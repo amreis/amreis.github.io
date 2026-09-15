@@ -41,3 +41,9 @@ $width: calc(min(max(5vw, 5vh), 50px));
     right: 3vw;
   }
 }
+
+$img-background-color: #{$code-background-color};
+
+:root[data-theme="dark"] img {
+  background-color: color-mix(in srgb, $code-background-color, white 50%);
+}
